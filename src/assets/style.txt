@@ -1,0 +1,13 @@
+:root {
+  --primary-color: #121212;
+  --secondary-color: #FD6F00;
+  --color-text: #FEFEFE;
+  --navbar-color: #121212;
+  --navbar-color-text: #959595;
+   --logo-gradient: linear-gradient(to right, #FA6E00, #E60026)
+}
+
+
+header {
+  background: #121212;
+}
