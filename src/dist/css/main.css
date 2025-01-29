@@ -4,6 +4,11 @@
   color: var(--color-text);
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 :root {
   --primary-color: #121212;
   --secondary-color: #fd6f00;
