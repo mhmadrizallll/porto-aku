@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 import { useNavigate } from "react-router";
 
-const text = "Hi   I'am";
+const text = "Hi I'am";
 
 import {
   portofolioList,

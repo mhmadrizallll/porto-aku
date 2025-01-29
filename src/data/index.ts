@@ -127,22 +127,22 @@ export const sosmedList = [
   {
     id: 1,
     icon: "fa-brands fa-linkedin",
-    link: "https://www.linkedin.com/in/muhammadrizalofficial/ ",
+    link: "https://www.linkedin.com/in/mhmadrizallll",
   },
   {
     id: 2,
     icon: "fa-brands fa-github",
-    link: "https://github.com/muhammadrizalofficial",
+    link: "https://github.com/mhmadrizallll",
   },
   {
     id: 3,
     icon: "fa-brands fa-instagram",
-    link: "https://www.instagram.com/muhammadrizalofficial/ ",
+    link: "https://www.instagram.com/mhmadrizallll/",
   },
   {
     id: 4,
     icon: "fa-brands fa-facebook",
-    link: "https://www.facebook.com/muhammadrizalofficial",
+    link: "https://www.facebook.com/",
   },
 ];
 

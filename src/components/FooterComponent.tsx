@@ -50,14 +50,18 @@ const FooterComponent = () => {
               style={{ background: "transparent" }}
             >
               <i className="fa-regular fa-envelope"></i>
-              <p className="m-0">kenshhh@gmail.com</p>
+
+              <a href="mailto:muhammadrizal087733521@gmail.com">
+                muhammadrizal087733521@gmail.com
+              </a>
             </div>
             <div
               className="d-flex align-items-center justify-content-center gap-3"
               style={{ background: "transparent" }}
             >
               <i className="fa-solid fa-phone"></i>
-              <p className="m-0">0123456789</p>
+
+              <a href="http://wa.me/6285640199864">+62 856 4019 9864</a>
             </div>
           </Col>
         </Row>
