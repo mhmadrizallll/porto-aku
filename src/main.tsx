@@ -4,7 +4,7 @@ import App from "./App.tsx";
 
 import { BrowserRouter } from "react-router";
 
-import "./dist/css/main.css";
+import "../src/assets/css/style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "animate.css";
 
