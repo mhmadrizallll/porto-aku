@@ -35,13 +35,6 @@ const PortofolioPage = () => {
               </Col>
             ))}
           </Row>
-          <Row>
-            <Col>
-              <div className="py-5">
-                <button className="download-btn">See All Porto</button>
-              </div>
-            </Col>
-          </Row>
         </Container>
       </div>
     </div>

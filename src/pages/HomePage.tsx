@@ -300,7 +300,12 @@ const HomePage = () => {
           <Row>
             <Col>
               <div className="py-5">
-                <button className="download-btn">See All Porto</button>
+                <button
+                  className="download-btn"
+                  onClick={() => navigate("/portofolio")}
+                >
+                  See All Porto
+                </button>
               </div>
             </Col>
           </Row>
