@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router";
 
 import NavbarComponent from "./components/NavbarComponent";
-// import FooterComponent from "./components/FooterComponent";
+import FooterComponent from "./components/FooterComponent";
 
 import HomePage from "./pages/HomePage";
 import ServicePage from "./pages/ServicePage";
@@ -22,7 +22,7 @@ function App() {
         <Route path="/contact" Component={ContactPage} />
       </Routes>
 
-      {/* <FooterComponent /> */}
+      <FooterComponent />
     </>
   );
 }

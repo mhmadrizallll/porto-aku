@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { navLinks } from "../data/index.ts";
-import { NavLink } from "react-router"; // Corrected import
+import { NavLink, useNavigate } from "react-router"; // Corrected import
 import HireMeComponent from "./HireMeComponent.tsx";
 
 const NavbarComponent = () => {
   const [changeColor, setChangeColor] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  let navigate = useNavigate();
 
   const changeBackgroundColor = () => {
     if (window.scrollY > 10) {
@@ -50,7 +51,7 @@ const NavbarComponent = () => {
                 </Nav.Link>
               ))}
             </Nav>
-            <HireMeComponent />
+            <HireMeComponent onClick={() => navigate("/contact")} />
           </Navbar.Collapse>
         </Container>
       </Navbar>
@@ -77,7 +78,7 @@ const NavbarComponent = () => {
         </Nav>
 
         <div className="mt-3 text-center w-100">
-          <HireMeComponent />
+          <HireMeComponent onClick={() => navigate("/contact")} />
         </div>
       </div>
     </div>

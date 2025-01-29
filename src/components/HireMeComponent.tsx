@@ -1,7 +1,9 @@
-const HireMeComponent = () => {
+const HireMeComponent = ({ onClick }: { onClick: () => void }) => {
   return (
     <div>
-      <button className="hireme-btn">Hire Me</button>
+      <button onClick={onClick} className="hireme-btn">
+        Hire Me
+      </button>
     </div>
   );
 };
