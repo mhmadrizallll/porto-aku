@@ -1,24 +1,64 @@
 * {
   font-family: "Lato", sans-serif;
-  background: #121212;
-  color: var(--color-text);
+   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease;
 }
+
 
 html,
 body {
   overflow-x: hidden;
 }
 
+body {
+  background: var(--primary-color);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =========================
+DARK MODE (DEFAULT)
+========================= */
+
 :root {
   --primary-color: #121212;
   --secondary-color: #fd6f00;
+
   --color-text: #fefefe;
   --secondary-color-text: #707070;
+
   --navbar-color: #121212;
   --navbar-color-text: #959595;
+
   --logo-gradient: linear-gradient(to right, #fa6e00, #e60026);
   --gradient-color: linear-gradient(to right, #984300, #fd6f00, #ca5900);
+
   --kotak: #575757;
+}
+
+/* =========================
+LIGHT MODE
+========================= */
+
+body.light-mode {
+  --primary-color: #ffffff;
+  --secondary-color: #fd6f00;
+
+  --color-text: #121212;
+  --secondary-color-text: #555555;
+
+  --navbar-color: #ffffff;
+  --navbar-color-text: #444444;
+
+  --logo-gradient: linear-gradient(to right, #fa6e00, #e60026);
+  --gradient-color: linear-gradient(to right, #984300, #fd6f00, #ca5900);
+
+  --kotak: #e0e0e0;
 }
 
 /* Navbar */
@@ -32,7 +72,12 @@ body {
   z-index: 999;
   animation-name: fadeInDown;
   animation-duration: 1s;
+   background: var(--navbar-color);
+  border-bottom: 2px solid var(--primary-color);
+  transition: 0.3s;
 }
+
+
 
 .navbar.color-active {
   background-color: var(--navbar-color);
@@ -67,30 +112,42 @@ body {
 
 .navbar .nav-link.active {
   background-color: var(--secondary-color);
-  color: var(--color-text) !important;
+  color: #ffffff !important;  
   border-radius: 10px;
 }
 
 /* Menyembunyikan icon default */
+.navbar-toggler {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 4px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+/* sembunyikan icon default bootstrap */
 .navbar-toggler-icon {
-  display: none;
+  display: none !important;
 }
 
 /* Membuat icon hamburger kustom dengan tiga garis sejajar */
 .navbar-toggler-custom .hamburger-icon {
-  width: 30px; /* Lebar garis */
-  height: 24px; /* Tinggi kontainer */
+  width: 26px;
+  height: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+
 }
 
 .navbar-toggler-custom .hamburger-icon .line {
   width: 100%;
-  height: 3px; /* Ketebalan garis */
-  background-color: #fd6f00; /* Warna garis */
-  border-radius: 4px;
+  height: 3px;
+  background: #fd6f00;
+  border-radius: 6px;
 }
 
 /* Jika kamu ingin memberi efek saat collapse, seperti rotate */
@@ -115,11 +172,13 @@ body {
   right: -50%; /* Sidebar starts from 50% off-screen on the right */
   width: 50%; /* Sidebar takes up 50% of the screen width */
   height: 100%;
+  background: var(--navbar-color);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   transition: right 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for sliding and shadow */
   z-index: 1050;
   padding: 20px;
 }
+
 
 .sidebar.open {
   right: 0; /* When open, sidebar will slide into view */
@@ -190,8 +249,8 @@ button.btn {
 
 /* Component HireMe*/
 .hireme-btn {
-  background: var(--secondary-color); /* Gradasi warna */
-  color: white; /* Warna teks */
+  background: var(--secondary-color);
+  color: #ffffff; /* Warna teks */
   border: none; /* Hilangkan border */
   width: 100%;
   padding: 10px 40px; /* Padding tombol */
@@ -204,6 +263,7 @@ button.btn {
 
 .hireme-btn:hover {
   background-color: #fd5000;
+  color: #ffffff;
   transform: scale(1.05); /* Efek zoom */
 }
 
@@ -222,7 +282,7 @@ button.btn {
 
 .download-btn:hover {
   background-color: #959595; /* Warna isi saat hover */
-  color: white; /* Warna teks saat hover */
+  color: var(--color-text); /* Warna teks saat hover */
   transform: scale(1.05); /* Efek zoom */
 }
 
@@ -278,7 +338,7 @@ button.btn {
 }
 
 .homepage .header-box .logo-item i:hover {
-  color: white;
+  color: var(--color-text);
 }
 
 .homepage .header-box img {
@@ -868,11 +928,11 @@ button.btn {
 .homepage .contact .row-2 .inputan {
   border: 1px solid var(--navbar-color-text);
   background: transparent;
-  color: white;
+  color: var(--color-text);
 }
 
 .homepage .contact .row-2 .inputan::placeholder {
-  color: white;
+  color: var(--color-text);
   opacity: 0.5;
 }
 
@@ -883,7 +943,7 @@ button.btn {
 .homepage .contact .row-2 .inputan-date {
   border: 1px solid var(--navbar-color-text);
   background: transparent;
-  color: white;
+  color: var(--color-text);
   /* opacity: 0.5; */
 }
 
@@ -927,11 +987,11 @@ button.btn {
 .contact-page .contact .row-2 .inputan {
   border: 1px solid var(--navbar-color-text);
   background: transparent;
-  color: white;
+  color: var(--color-text);
 }
 
 .contact-page .contact .row-2 .inputan::placeholder {
-  color: white;
+  color: var(--color-text);
   opacity: 0.5;
 }
 
@@ -942,7 +1002,7 @@ button.btn {
 .contact-page .contact .row-2 .inputan-date {
   border: 1px solid var(--navbar-color-text);
   background: transparent;
-  color: white;
+  color: var(--color-text);
   /* opacity: 0.5; */
 }
 
@@ -963,6 +1023,41 @@ button.btn {
 /* ContactPage Me */
 
 /* Footer */
+.footer {
+  position: relative;
+  background: var(--primary-color);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gradient-color);
+}
+
+/* efek blur / glow */
+.footer::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--secondary-color);
+  filter: blur(6px);
+  opacity: 0.7;
+}
+
+/* LIGHT MODE → blur dimatikan */
+body.light-mode .footer::after {
+  display: none;
+}
+
 .footer .row:nth-child(1) h1 {
   font-weight: 700;
   text-align: center;
@@ -1048,3 +1143,203 @@ button.btn {
   color: var(--navbar-color-text);
 }
 /* Footer */
+
+.theme-toggle {
+  cursor: pointer;
+}
+
+/* switch background */
+.toggle-switch {
+  width: 50px;
+  height: 26px;
+  background: #2b2b2b;
+  border-radius: 20px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* lingkaran */
+.toggle-circle {
+  width: 22px;
+  height: 22px;
+  background: rgba(255,255,255,0.2);
+backdrop-filter: blur(6px);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+/* posisi saat light */
+.toggle-switch.light {
+  background: #fd6f00;
+}
+
+.toggle-switch.light .toggle-circle {
+  transform: translateX(24px);
+}
+
+.homepage,
+.homepage header,
+.homepage .service,
+.homepage .about,
+.homepage .portofolio,
+.homepage .contact,
+.service-page,
+.about-page,
+.portofolio-page,
+.contact-page {
+  background: var(--primary-color);
+  color: var(--color-text);
+}
+
+/* ------------------------------
+Common Input Style
+------------------------------ */
+.inputan {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--kotak);
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--primary-color);
+  color: var(--color-text);
+  transition: all 0.3s ease;
+}
+
+/* Focus / Hover */
+.inputan:focus,
+.inputan:hover {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 5px var(--secondary-color);
+}
+
+/* ------------------------------
+Select Modern
+------------------------------ */
+.inputan.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 2rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='5'><polygon points='0,0 10,0 5,5' fill='%23fd6f00'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 5px;
+}
+
+.inputan.select option {
+  background-color: var(--primary-color);
+  color: var(--color-text);
+}
+
+/* ------------------------------
+Number Input Modern
+------------------------------ */
+.inputan[type="number"] {
+  -moz-appearance: textfield;
+}
+.inputan[type="number"]::-webkit-inner-spin-button,
+.inputan[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ------------------------------
+Date Modern (Flatpickr)
+------------------------------ */
+.inputan-date {
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--kotak);
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--color-text);
+}
+
+/* Flatpickr Dark Mode */
+.flatpickr-calendar.dark-flatpickr {
+  background: var(--primary-color) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--kotak);
+}
+
+.flatpickr-calendar.dark-flatpickr .flatpickr-months,
+.flatpickr-calendar.dark-flatpickr .flatpickr-weekdays,
+.flatpickr-calendar.dark-flatpickr .flatpickr-weekday,
+.flatpickr-calendar.dark-flatpickr .flatpickr-day {
+  color: var(--color-text);
+  background: var(--primary-color);
+}
+
+.flatpickr-calendar.dark-flatpickr .flatpickr-day:hover,
+.flatpickr-calendar.dark-flatpickr .flatpickr-day.selected {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.flatpickr-day.today {
+  border-color: var(--secondary-color);
+}
+
+.flatpickr-prev-month,
+.flatpickr-next-month {
+  fill: var(--color-text);
+}
+
+/* ------------------------------
+Textarea Modern
+------------------------------ */
+textarea.inputan {
+  height: auto;
+  min-height: 120px;         /* tinggi default */
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 0.5rem;     /* lebih bulat dari input biasa */
+  border: 1px solid var(--kotak);
+  background-color: var(--primary-color);
+  color: var(--color-text);
+  width: 100%;
+  resize: vertical;
+  transition: all 0.3s ease;
+}
+
+textarea.inputan:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 5px var(--secondary-color);
+}
+
+textarea.inputan::placeholder {
+  color: var(--color-text);
+  opacity: 0.5;
+}
+
+/* ------------------------------
+Responsive Adjustments
+------------------------------ */
+@media screen and (max-width: 576px) {
+  .inputan,
+  .inputan-date,
+  .inputan.select {
+    font-size: 0.9rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  textarea.inputan {
+    min-height: 100px;
+    padding: 10px 12px;
+  }
+}

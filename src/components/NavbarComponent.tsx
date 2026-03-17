@@ -3,11 +3,12 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { navLinks } from "../data/index.ts";
 import { NavLink, useNavigate } from "react-router"; // Corrected import
 import HireMeComponent from "./HireMeComponent.tsx";
+import ThemeToggle from "./ThemeToggleComponent.tsx";
 
 const NavbarComponent = () => {
   const [changeColor, setChangeColor] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const changeBackgroundColor = () => {
     if (window.scrollY > 10) {
@@ -29,17 +30,21 @@ const NavbarComponent = () => {
           <Navbar.Brand href="#home" className="fs-3 fw-bold logo">
             OppSS
           </Navbar.Brand>
-          <Navbar.Toggle
-            aria-controls="basic-navbar-nav"
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="navbar-toggler-custom"
-          >
-            <span className="hamburger-icon">
-              <span className="line"></span>
-              <span className="line"></span>
-              <span className="line"></span>
-            </span>
-          </Navbar.Toggle>
+          <div className="d-flex align-items-center gap-2 d-lg-none">
+            <ThemeToggle />
+
+            <Navbar.Toggle
+  aria-controls="basic-navbar-nav"
+  onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+  className="navbar-toggler-custom"
+>
+  <span className="hamburger-icon">
+    <span className="line"></span>
+    <span className="line"></span>
+    <span className="line"></span>
+  </span>
+</Navbar.Toggle>
+          </div>
           <Navbar.Collapse
             id="basic-navbar-nav"
             className="d-none d-lg-flex justify-content-between w-100"
@@ -51,7 +56,10 @@ const NavbarComponent = () => {
                 </Nav.Link>
               ))}
             </Nav>
-            <HireMeComponent onClick={() => navigate("/contact")} />
+            <div className="d-flex align-items-center gap-2 ">
+              <ThemeToggle />
+              <HireMeComponent onClick={() => navigate("/contact")} />
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>

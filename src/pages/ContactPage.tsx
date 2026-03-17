@@ -1,6 +1,11 @@
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { useRef, useState, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
+import Flatpickr from "react-flatpickr";
+import "flatpickr/dist/flatpickr.css";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactPage = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -15,21 +20,37 @@ const ContactPage = () => {
 
     emailjs
       .sendForm(
-        "service_hhz48ki", // ganti service id
+        "service_1vhgu2f", // ganti service id
         "template_3lhl18n", // ganti template id
         form.current,
         "E1fY8zf0RCd83LpLT" // ganti public key
       )
       .then(
-        () => {
-          alert("Message sent successfully!");
-          form.current?.reset();
-          setLoading(false);
-        },
-        () => {
-          alert("Failed to send message");
-          setLoading(false);
-        }
+    () => {
+      toast.success("Message sent successfully!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light", // bisa diganti "dark" kalau dark mode
+      });
+      form.current?.reset();
+      setLoading(false);
+    },
+    () => {
+      toast.error("Failed to send message", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+      });
+      setLoading(false);
+    }
       );
   };
 
@@ -74,12 +95,15 @@ const ContactPage = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                  <Form.Control
-                    type="date"
-                    name="date"
-                    className="inputan-date"
-                    required
-                  />
+                  <Flatpickr
+                  type="date"
+                  name="date"
+                  className="inputan"
+                  options={{
+                    dateFormat: "Y-m-d"
+                  }}
+                  placeholder="Select Date"
+                />
                 </Form.Group>
               </Col>
 
@@ -98,19 +122,13 @@ const ContactPage = () => {
                   <Form.Select
                     name="service"
                     aria-label="Default select example"
-                    className="inputan"
+                    className="inputan select"
                     required
                   >
-                    <option value="">Service of Attack</option>
-                    <option value="Consultan Tools IT">
-                      Consultan Tools IT
-                    </option>
-                    <option value="Web Development">
-                      Web Development
-                    </option>
-                    <option value="Software Development">
-                      Software Development
-                    </option>
+                    <option value="">Select Service</option>
+                    <option value="Consultan Tools IT">Consultan Tools IT</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Software Development">Software Development</option>
                   </Form.Select>
                 </Form.Group>
 
@@ -139,6 +157,7 @@ const ContactPage = () => {
           </Form>
         </Container>
       </div>
+      <ToastContainer />
     </div>
   );
 };
