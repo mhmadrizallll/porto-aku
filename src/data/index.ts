@@ -4,6 +4,8 @@ import porto3 from "../assets/img/porto/porto-3.png";
 import porto4 from "../assets/img/porto/porto-4.png";
 import porto5 from "../assets/img/porto/porto-5.png";
 import porto6 from "../assets/img/porto/porto-6.png";
+import porto7 from "../assets/img/porto/porto-7.png";
+import porto8 from "../assets/img/porto/porto-8.png";
 
 export const navLinks = [
   {
@@ -195,6 +197,24 @@ export const portofolioList = [
   {
     id: 6,
     image: porto6,
+    title: "Portofolio 6",
+    link: "https://www.google.com",
+    category: "Web Development",
+    nameAos: "fade-up-left",
+    delay: 1000,
+  },
+  {
+    id: 7,
+    image: porto7,
+    title: "Portofolio 6",
+    link: "https://www.google.com",
+    category: "Web Development",
+    nameAos: "fade-up-left",
+    delay: 1000,
+  },
+  {
+    id: 8,
+    image: porto8,
     title: "Portofolio 6",
     link: "https://www.google.com",
     category: "Web Development",

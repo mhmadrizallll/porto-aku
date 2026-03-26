@@ -68,7 +68,7 @@
           <hr />
           <Row>
             <Col>
-              <p>@2023 OppSS All Right Reserved</p>
+             <p>@{new Date().getFullYear()} OppSS All Right Reserved</p>
             </Col>
           </Row>
         </Container>
